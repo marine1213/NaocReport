@@ -1,0 +1,92 @@
+<!--Leaflet Style-->
+<style>
+*{font-family: 'Source Sans Pro', sans-serif;}
+#map {position : absolute;height : 100%;width : 100vw}
+.leaflet-popup-content {font-size: medium;}
+.form-group{width:350px;margin-bottom:0;}
+.form-control{resize:none;}
+.text-muted{font-size:smaller;}
+hr {margin: 10px 0;}
+.center { top:50%; left:50%; position: fixed; transform: translate(-50%, -50%); }
+.red-text {color: #ff0000}
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0; left: 0; right: 0;bottom: 0; 
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  cursor: pointer; /* Add a pointer on hover */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+.marker-outer{
+  display: block;
+  border: none;
+  width: 80px;
+  height: 80px;
+  padding: 0px 33px 0px;
+  box-sizing: border-box;
+}
+.marker {
+  width: 40px;
+  height: 40px;
+  display: block;
+  border: none;
+  /*cursor: pointer;*/
+  background-image: url(https://image.flaticon.com/icons/svg/148/148878.svg);
+  background-repeat:no-repeat;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+}
+/* The snackbar - position it at the bottom and in the middle of the screen */
+.snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #fff; /* Black background color */
+  color: #333; /* White text color */
+  font-weight: bold; 
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 3; /* Add a z-index if needed */
+  left: 20%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+.snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+</style>
+<!---------------------------------------------------------------------------------------------------------------------------------->

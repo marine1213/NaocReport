@@ -3,87 +3,187 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>GPS Data Collection</title>
+		<meta version="2.0" date="20191004"/>
 
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.10.0/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.10.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-performance.js"></script>
     <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+		<!--Jquery-->
+		<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+		<!--Bootstrap for form-->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+		<!--Mapbox GL plugin mapbox.js -->
+		<script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+
+		<!--Location Control Plugin-->
+		<script src='https://cdn.jsdelivr.net/leaflet.locatecontrol/0.49.0/L.Control.Locate.min.js'></script>
+		<link href='https://cdn.jsdelivr.net/leaflet.locatecontrol/0.49.0/L.Control.Locate.css' rel='stylesheet' />
+
+		<!--Tabletop and GeoJson
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.min.js"></script>
+		<script src="js/geojson.js"></script>-->
+
+		<!-- Compiled and minified CSS -->
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+		<!--leaflet Plugin-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+
+		<!--Mapbox plugin mapbox.js -->
+		<script src='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js'></script>
+		<link href='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css' rel='stylesheet' />
+
+		<!--Leaflet Fullscreen -->
+		<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+		<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+
+
+		<!--Fonts-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900' rel='stylesheet' type='text/css'>
+<!---------------------------------------------------------------------------------------------------------------------------------->
+		<link rel="stylesheet" type="text/css" href="lib/mapStyle.css">
+	</head>
+<!---------------------------------------------------------------------------------------------------------------------------------->
+	<body class="unseen">
+
+		<div class="overlay" id="input_form">
+		  <div class="center panel panel-primary">
+		      <div class="panel-heading" > Thông báo tình trạng BTXM Khu bay
+		      <button type="button" class="close" data-dismiss="modal" aria-hidden="false" onclick="closeOverlayForm()"> &times;</button> 
+		      </div>
+		      <div class="panel-body">
+		         
+		          <form role="form" id="form_body">
+						<div class="form-group" id="main_group">
+							<div class="form-check form-check-inline w3-row" id="form_radio_status_group">
+								<div class="w3-col s6">
+									<label>Tình trạng</label>
+									<div class="form-check-inline" >
+										<input class="form-check-input" type="radio" name="nv" value="Nứt vỡ">
+										<label class="form-check-label" onclick="var sib = this.previousElementSibling; sib.checked = true; setSuco(sib.value);">Nứt vỡ</label>
+									</div>
+									<div class="form-check-inline" >
+										<input class="form-check-input" type="radio" name="nv" value="Bong bật">
+										<label class="form-check-label" onclick="var sib = this.previousElementSibling; sib.checked = true; setSuco(sib.value);">Bong bật</label>
+									</div>
+									<div class="form-check-inline" >
+										<input class="form-check-input" type="radio" name="nv" value="Mẻ khe">
+										<label class="form-check-label" onclick="var sib = this.previousElementSibling; sib.checked = true; setSuco(sib.value);">Mẻ khe</label>
+									</div>
+								</div>
+								<div class="w3-col s6">
+									<label>Mức độ nguy hiểm</label>
+									<div class="form-check-inline" >
+										<input class="form-check-input" type="radio" name="nguyhiem" value="Rất nguy hiểm">
+										<label class="form-check-label" onclick="var sib = this.previousElementSibling; sib.checked = true; setMucdo(sib.value);">Rất cao</label>
+									</div>
+									<div class="form-check-inline" >
+										<input class="form-check-input" type="radio" name="nguyhiem" value="Nguy hiểm">
+										<label class="form-check-label" onclick="var sib = this.previousElementSibling; sib.checked = true; setMucdo(sib.value);">Cao</label>
+									</div>
+									<div class="form-check-inline" >
+										<input class="form-check-input" type="radio" name="nguyhiem" value="Ít nguy hiểm">
+										<label class="form-check-label" onclick="var sib = this.previousElementSibling; sib.checked = true; setMucdo(sib.value);">Thấp</label>
+									</div>
+								</div>
+							</div>
+		                    <div class="form-check form-check-inline" style="display:none" id="form_radio_done_group">
+								<div class="form-check-inline" >
+									<input class="form-check-input" type="radio" name="nv" value="Đã xử lý xong" disabled checked>
+									<label class="form-check-label">Đã xử lý xong</label>
+								</div>
+		                        <!-- Cong nghe va' -->
+		                        <div class="form-group">
+		                          <label>Công nghệ trám vá</label>
+		                        </div>
+		                        <div class="form-check-inline" >
+		                          <input class="form-check-input" type="radio" name="congnghetramva" value="Rót nhựa" >
+		                          <label class="form-check-label" onclick="var sib = this.previousElementSibling; sib.checked = true; setCongNghe(sib.value);">Rót nhựa</label>
+		                        </div>
+		                          <div class="form-check-inline" >
+		                          <input class="form-check-input" type="radio" name="congnghetramva" value="Trám vá">
+		                          <label class="form-check-label" onclick="var sib = this.previousElementSibling; sib.checked = true; setCongNghe(sib.value);">Trám vá</label>
+		                        </div>
+		                          <div class="form-check-inline" >
+		                          <input class="form-check-input" type="radio" name="congnghetramva" value="Mài">
+		                          <label class="form-check-label" onclick="var sib = this.previousElementSibling; sib.checked = true; setCongNghe(sib.value);">Mài</label>
+		                        </div>
+							</div>
+		                    
+							<input id="form_radio_status_checked" class="form-check-input" type="hidden" value="init">
+							<input id="form_radio_emergency_level_checked" class="form-check-input" type="hidden" value="init">
+		                    <input id="form_done_radio_checked" class="form-check-input" type="hidden" value="init">
+							<div class="form-group" id="form_location_group">
+								<label>Tên vị trí</label>
+								<textarea id="form_location" class="form-control" rows="1" placeholder="Ví dụ: 427/31"></textarea>
+							</div>
+							<div class="form-group">
+								<label>Mô tả bằng hình ảnh</label>
+		 					    <input id="files_input" type="file" accept="image/*" > 
+							</div>
+						</div>
+						<div class="form-group" id="detail_group" style="display: none;">
+							<div id="form_size_group">
+								<label>Mô tả Kích thước</label>
+								<textarea id="form_size" class="form-control" rows="1" placeholder="Độ dài cạnh:Đông Tây(cm) x Bắc Nam(cm)" ></textarea>
+							</div>
+							<label>Mô tả bằng văn bản</label>
+							<textarea id="form_text" class="form-control" placeholder="Đặc điểm nứt vỡ..." style="height: 80px"></textarea>
+						</div>
+						<em class="text-muted">Chọn một điểm trên bản đồ và thêm thông tin.</em>
+						<hr />
+						<button type='button' onclick="formSubmitting(event);" id="form_button">Submit</button>
+						<button type='button' onclick="onDetailDesc(this);">Mô tả bằng văn bản</button>
+					</form>
+					<div id="form_output"></div>
+		        </div>
+		   </div>
+		</div>
+		<div id="map" class="map"></div>
+
+		<!-- The actual snackbar -->
+		<div id="snackbar"></div>
+
+		<script type="text/javascript">
+			var detailState = false;
+			onDetailDesc = (elem)=>{
+				if(detailState=!detailState) {$('#detail_group').show();$('#main_group').hide();elem.innerHTML = 'Mô tả khác';}
+				else {$('#detail_group').hide();$('#main_group').show(); elem.innerHTML = 'Mô tả bằng văn bản'; }
+			};
+		</script>
+		<script defer type="text/javascript" src="lib/common/libScript.js"></script>
+		<script defer type="text/javascript" src="lib/common/logScript.js"></script>
+		<script defer type="text/javascript" src="lib/firebaseScript.js"></script>
+		<script defer type="text/javascript" src="lib/firestoreScript.js"></script>
+		<script defer type="text/javascript" src="lib/api/GasApi.js"></script>
+		<script defer type="text/javascript" src="lib/data/dataPrototypeScript.js"></script>
+		<script defer type="text/javascript" src="lib/data/dataProcessScript.js"></script>
+		
+		<script defer type="text/javascript" src="lib/formScriptDataCtrl.js"></script>
+		<script defer type="text/javascript" src="lib/formScriptUiCtrl.js"></script>
+		<script defer type="text/javascript" src="lib/formScriptLog.js"></script>
+    <script defer type="text/javascript" src="lib/mapCtrl.js"></script>
+    <script defer type="text/javascript" src="lib/api/upload/googleDriveScript.js"></script>
+    <script defer type="text/javascript" src="lib/formScriptInit.js"></script>
+    <script defer type="text/javascript" src="lib/utils/shortcut.js"></script>
   </body>
 </html>
