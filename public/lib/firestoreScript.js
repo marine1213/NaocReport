@@ -61,7 +61,7 @@ class FirestoreDB{
 // log (replay), active panel (map), indexed name (report), indexed day (report)
 	
 	add(data){
-		let timestampId = data.timestamp.replace("/",)
+		// let timestampId = data.timestamp.replace("/",)
 		// add to log
 		db.collection('Log').doc(data.id).set(data).catch(e=>console.error("Error adding document Log: ", error));
 		// add to active panel
@@ -73,15 +73,15 @@ class FirestoreDB{
 	}
 
 	remove(data){
-		let timestampId = data.timestamp.replace("/",)
+		// let timestampId = data.timestamp.replace("/",)
 		// add to log
 		db.collection('Log').doc(data.id).set(data).catch(e=>console.error("Error remove document Log: ", error));
 		// add to active panel
-		db.collection('Active').doc(data.id).delete().catch(e=>console.error("Error remove document Active: ", error));
+		db.collection('Active').doc(data.refrencedId).delete().catch(e=>console.error("Error remove document Active: ", error));
 		// add to indexed Name
-		db.collection('IndexedName').doc(data.name.replace('/','.')+'/'+data.id.replace('_','/')).set(data).catch(e=>console.error("Error remove document IndexedName: ", error));
+		db.collection('IndexedName').doc(data.name.replace('/','.')+'/'+data.id.replace('_','/')).set(data).catch(e=>console.error("Error adding document IndexedName: ", error));
 		// add to indexed Day
-		db.collection('IndexedDay').doc(getFmDate(new Date(),'yyyy/mmdd/'+data.id.split('_')[1])).set(data).catch(e=>console.error("Error remove document IndexedDay: ", error));
+		db.collection('IndexedDay').doc(getFmDate(new Date(),'yyyy/mmdd/'+data.id.split('_')[1])).set(data).catch(e=>console.error("Error adding document IndexedDay: ", error));
 	}
 
 	getActive(resultPromise){

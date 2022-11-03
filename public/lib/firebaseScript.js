@@ -3,7 +3,6 @@ var loggedInUser=null;
 initFirebaseApp = (p)=>{
   // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
   // // The Firebase SDK is initialized and available here!
-  firebase.auth().onAuthStateChanged(user => {console.log(user); });
   // firebase.firestore().doc('/foo/bar').get().then(() => { });
   // firebase.messaging().requestPermission().then(() => { });
   // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
@@ -15,8 +14,13 @@ initFirebaseApp = (p)=>{
 try { let app = firebase.app(); let features = [ 'auth', 'firestore', 'analytics', 'performance' ].filter(feature => typeof app[feature] === 'function'); console.log(`Firebase SDK loaded with ${features.join(', ')}`); } catch (e) { console.error(e); }
 
 	firebase.auth().onAuthStateChanged(
-    (user)=>{(user)?/*Signed in.*/processUserData(user,p.callback)://user.getIdToken().then((accessToken)=>{__})
-                    /*Signed out.*/window.location.assign('signin.html');}, 
+    (user)=>{
+      console.log(user);
+      (user)?/*Signed in.*/processUserData(user,p.callback):
+      (localStorage.getItem("accessToken")?firebase.auth().currentUser.getIdToken(true).then((accessToken)=>{localStorage.setItem("accessToken",accessToken);}):
+                    /*Signed out.*/window.location.assign('signin.html')
+                    );
+                  }, 
     (error)=>{logE(null,error);});
 };
 

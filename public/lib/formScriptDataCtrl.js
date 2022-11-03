@@ -13,8 +13,9 @@ var form = (function(){
    var userName, userEmail, userInfo;
    
    //===========private function==============
-  sendData=()=>{ mainData.db.add(data);// google.script.run.withSuccessHandler(formSubmitted).writeForm(data);  
-  }
+  sendData=()=>{ mainData.db.add(data); formSubmitted("Dữ liệu đã được gửi đi!");}
+
+  removeData=()=>{ mainData.db.remove(data); formSubmitted("Dữ liệu đã được gửi đi!");}
    
   updateData=()=>{}
    //===========public function===============
@@ -25,7 +26,7 @@ var form = (function(){
    publicData.getPermissionCode=()=>permissionCode;
    publicData.setLatLng=(newlat,newlng)=>{lat = newlat; lng = newlng;}
 
-   publicData.setData=(status, emergencyLevel, repairedMethod, fileId,size,tileName, detail)=>{
+   publicData.setData=(status, emergencyLevel, repairedMethod, fileId,size,tileName, detail, refrencedId)=>{
      let date = new Date(); fmDate = getFmDateTime(date);   // chuyển Object Date về dạng String 
      // '?' giúp tăng số last row lên, nếu để trống, dòng này coi như không có mới
      // data = ['?', date, lat+'', lng+'', tileName, status, emergencyLevel, repairedMethod, fileId, '',size, detail,userName, userEmail];
@@ -35,7 +36,8 @@ var form = (function(){
       lat:lat+'', lng:lng+'', name:tileName, status:status, level:emergencyLevel, recovered:repairedMethod, 
       img:fileId, size:size, detail:detail, 
       user:userName, email: userEmail
-     }
+     };
+     if(refrencedId) data.refrencedId = refrencedId;
    }
    
    publicData.getData=()=> data;
@@ -65,28 +67,30 @@ var form = (function(){
     if(inData.buttonId == -1){ // thêm sự cố mới
       //param: status,fileId,tileName,tileSize,detail
       this.setData(inData.status,inData.emergencyLevel,'-', inData.fileId,inData.tileSize,inData.tileLocation,inData.description); 
+      logF(sendData);
     }else{
       //status != 'Đã xử lý xong'(báo đã xong)
       let item = loadedData.find(currentItem=>{return currentItem.id == inData.buttonId});
       // logE(item);
       // logE(inData);
       this.setLatLng(item.lat, item.lng);
-      this.setData(inData.status,item.level,inData.doneStatus,inData.fileId,inData.tileSize,item.name,inData.description)
+      this.setData(inData.status,item.level,inData.doneStatus,inData.fileId,inData.tileSize,item.name,inData.description,item.id);
+      logF(removeData);
     }
-    sendData();
   }
   
-  publicData.sendDoneToSheet = function(buttonId){ 
-    sendData();
-  }
+  // publicData.sendDoneToSheet = function(buttonId){ 
+  //   sendData();
+  // }
    //===========event handle function============
    
    function formSubmitted(status) { // sẽ được gọi khi form được mở ra
      showMessage(status); //displays in item with the 'output' id
      logE('form is submitted');
-     //TODO: firestore
-     // google.script.run.withSuccessHandler(loadedDataFromSheet) 
-     //  .loadDataFromSpreadSheet(loadedData); 
+
+
+     mapPage.removeAllMarkers();
+     mainData.db.getActive(loadedDataFromFirestore);  
    }
    
    function onFileTransmittingSucces(e) { 
@@ -184,20 +188,19 @@ function onValidateFile(){
    //TODO: hien thi nhieu su co tren 1 tam:DONE
    //TODO: hien thi anh tren popup:DONE
    //TODO: them chuc nang bao da xong:DONE
-   function loadedDataFromSheet(snapList){
-     log.event('loadedDataFromSheet','Data loaded from Firestore');
+   function loadedDataFromFirestore(snapList){
+     log.event('loadedDataFromFirestore','Data loaded from Firestore');
      let imgIdList = [];
      let idx = 0;
      var colCode = { timestamp:0, lat:1, lng:2, posName:3, posEvent:4, posEmergencyLvl:5, posRecovered:6, posImg:7, posSize:9, posDescription:10, userName:11, userEmail:12, };
 
     snapList.forEach((doc)=>{
       let popupContent;
-      let markerProperties = {id: doc.id.replace(' ','_')};
+      let markerProperties = {id: doc.id};
       let docData = doc.data();
-      docData.id = docData.id.replace(' ','_');
       loadedData[idx++] = docData;
    
-      logE('loadedDataFromDB',JSON.stringify(doc.data()) );
+      // logE('loadedDataFromDB',JSON.stringify(doc.data()) );
       let emergencyLv = 9;
       switch(docData.level){ 
         case 'Rất nguy hiểm':   markerProperties.icon = 'flag-red'; break; 
@@ -285,6 +288,7 @@ function onGetPermissionCodeSuccess(pcode){
 
 function loadMapPermissionCodeAndDataFromServer(){
   onGetPermissionCodeSuccess({code:[1,1,1]});
+  logE(form.getUserInfo());
    // google.script.run.withSuccessHandler(onGetPermissionCodeSuccess)
    //  .getMapPermissionCode(form.getUserInfo()); 
 }
@@ -292,7 +296,7 @@ function loadMapPermissionCodeAndDataFromServer(){
 function loadSavedDataFromSheet(clearAll){
    if(clearAll)
      loadedData.length = 0;
-   mainData.db.getActive(loadedDataFromSheet);
-   // google.script.run.withSuccessHandler(loadedDataFromSheet)
-   //  .loadDataFromSpreadSheet(loadedData);     
+
+   mapPage.removeAllMarkers();
+   mainData.db.getActive(loadedDataFromFirestore);   
 }

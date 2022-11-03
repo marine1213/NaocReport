@@ -12,7 +12,7 @@ testGetJSON=()=>{
 }
 //Enable Drive API here: https://console.cloud.google.com/apis/library/drive.googleapis.com?project=naocreport
 apiDriveUploadCheckAccessToken=()=>{
-  getData('https://www.googleapis.com/drive/v3/files',localStorage.getItem('accessToken')).then(r=>{if(r.error) { window.location.assign('signin.html')} else logE('Connected to File DB!')});
+  getData('https://www.googleapis.com/drive/v3/files',localStorage.getItem('accessToken')).then(r=>{if(r.error) { window.location.assign('signin.html')} else logE('Connected to File Storage!')});
 }
 
 getFileMetadata=(fileId,callback)=>{

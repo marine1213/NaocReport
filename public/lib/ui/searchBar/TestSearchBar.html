@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Test Search Bar</title>
+   <link rel="stylesheet" type="text/css" href="searchBar.css">
+   <style type="text/css">
+      body{
+        background: #f2f2f2;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      /*Resize the wrap to see the search bar change!*/
+      .wrapSearch{
+        width: 30%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+   </style>
+</head>
+<body>
+
+   <div class="wrapSearch">
+      <div class="search">
+         <input type="text" class="searchTerm" placeholder="What are you looking for?">
+         <button type="submit" class="searchButton">
+           <i class="fa fa-search"></i>
+        </button>
+      </div>
+   </div>
+
+</body>
+</html>
+

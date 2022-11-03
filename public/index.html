@@ -41,7 +41,7 @@
 		<script src="js/geojson.js"></script>-->
 
 		<!-- Compiled and minified CSS -->
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="lib/ui/w3css/w3.css">
 
 		<!--leaflet Plugin-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
@@ -61,6 +61,8 @@
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900' rel='stylesheet' type='text/css'>
 <!---------------------------------------------------------------------------------------------------------------------------------->
 		<link rel="stylesheet" type="text/css" href="lib/mapStyle.css">
+   	<link rel="stylesheet" type="text/css" href="lib/ui/searchBar/searchBar.css">
+   	<link rel="stylesheet" type="text/css" href="lib/ui/snackBar/snackBar.css">
 	</head>
 <!---------------------------------------------------------------------------------------------------------------------------------->
 	<body class="unseen">
@@ -71,7 +73,6 @@
 		      <button type="button" class="close" data-dismiss="modal" aria-hidden="false" onclick="closeOverlayForm()"> &times;</button> 
 		      </div>
 		      <div class="panel-body">
-		         
 		          <form role="form" id="form_body">
 						<div class="form-group" id="main_group">
 							<div class="form-check form-check-inline w3-row" id="form_radio_status_group">
@@ -162,6 +163,17 @@
 
 		<!-- The actual snackbar -->
 		<div id="snackbar"></div>
+
+<!-- Search Bar -->
+   <div class="wrapSearch">
+      <div class="search">
+      	<button type="button" class="searchButton" onclick="this.nextElementSibling.focus()">
+           <i class="fa fa-search"></i>
+        </button>
+        <input type="text" class="searchTerm" placeholder="Tìm BTXM..." oninput="logE(event.target.value);"> 
+      </div>
+   </div>
+<!-- End of SearchBar -->
 
 		<script type="text/javascript">
 			var detailState = false;
