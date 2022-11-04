@@ -166,11 +166,19 @@
 
 <!-- Search Bar -->
    <div class="wrapSearch">
+
       <div class="search">
-      	<button type="button" class="searchButton" onclick="this.nextElementSibling.focus()">
-           <i class="fa fa-search"></i>
-        </button>
-        <input type="text" class="searchTerm" placeholder="Tìm BTXM..." oninput="logE(event.target.value);"> 
+	      	<button type="button" class="searchButton" onclick="this.nextElementSibling.focus()">
+	           <i class="fa fa-search"></i>
+	        </button>
+	   	  	<div class="w3-dropdown-hover w3-right">
+		        <input type="text" class="searchTerm" placeholder="Tìm BTXM..." oninput="logE(event.target.value);"> 
+		        <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0">
+				      <a href="#" class="w3-bar-item w3-button">Link 1</a>
+				      <a href="#" class="w3-bar-item w3-button">Link 2</a>
+				      <a href="#" class="w3-bar-item w3-button">Link 3</a>
+				    </div>
+				  </div>
       </div>
    </div>
 <!-- End of SearchBar -->

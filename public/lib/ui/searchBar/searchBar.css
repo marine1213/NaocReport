@@ -1,4 +1,4 @@
-/*@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css); */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css); 
 
 .search {
   width: 100%;
@@ -44,5 +44,6 @@
   position: fixed; /* Sit on top of the screen */
   margin-left: 50px;
   margin-top: 10px;
-
+  border: 2px solid #e8e8e847;
+  border-radius: 4px 4px 4px 4px;
 }
