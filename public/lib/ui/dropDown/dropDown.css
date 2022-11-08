@@ -7,7 +7,7 @@
 
 
 .dd-input {
-  display: none;
+  display: block;
 }
 
 .dd-menu {
@@ -26,9 +26,9 @@
   display: none;
 } 
 
-.dd-input:checked + .dd-menu {
+/*.dd-input:hover + .dd-menu {
   display: block;
-} 
+} */
 
 .dd-menu li {
   padding: 10px 20px;

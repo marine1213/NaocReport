@@ -63,6 +63,7 @@
 		<link rel="stylesheet" type="text/css" href="lib/mapStyle.css">
    	<link rel="stylesheet" type="text/css" href="lib/ui/searchBar/searchBar.css">
    	<link rel="stylesheet" type="text/css" href="lib/ui/snackBar/snackBar.css">
+   	<link rel="stylesheet" type="text/css" href="lib/ui/dropDown/dropDown.css">
 	</head>
 <!---------------------------------------------------------------------------------------------------------------------------------->
 	<body class="unseen">
@@ -171,13 +172,13 @@
 	      	<button type="button" class="searchButton" onclick="this.nextElementSibling.focus()">
 	           <i class="fa fa-search"></i>
 	        </button>
-	   	  	<div class="w3-dropdown-hover w3-right">
-		        <input type="text" class="searchTerm" placeholder="Tìm BTXM..." oninput="logE(event.target.value);"> 
-		        <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0">
-				      <a href="#" class="w3-bar-item w3-button">Link 1</a>
-				      <a href="#" class="w3-bar-item w3-button">Link 2</a>
-				      <a href="#" class="w3-bar-item w3-button">Link 3</a>
-				    </div>
+	   	  	<div class="dropdown">
+		        <input type="text" class="searchTerm dd-input" placeholder="Tìm BTXM..." oninput="logE(event.target.value);"> 
+							  <ul class="dd-menu">
+							    <li class="divider"></li>
+							    <li>Another action</li>
+							    <li>Something else here</li>
+							  </ul>
 				  </div>
       </div>
    </div>
@@ -202,6 +203,7 @@
 		<script defer type="text/javascript" src="lib/formScriptUiCtrl.js"></script>
 		<script defer type="text/javascript" src="lib/formScriptLog.js"></script>
     <script defer type="text/javascript" src="lib/mapCtrl.js"></script>
+    <script defer type="text/javascript" src="lib/ui/dropDown/dropDown.js"></script>
     <script defer type="text/javascript" src="lib/api/upload/googleDriveScript.js"></script>
     <script defer type="text/javascript" src="lib/formScriptInit.js"></script>
     <script defer type="text/javascript" src="lib/utils/shortcut.js"></script>
