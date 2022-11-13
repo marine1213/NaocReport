@@ -26,11 +26,12 @@
   display: none;
 } 
 
-/*.dd-input:hover + .dd-menu {
+.dd-input:focus + .dd-menu {
   display: block;
-} */
+} 
 
 .dd-menu li {
+  width: 200px;
   padding: 10px 20px;
   cursor: pointer;
   white-space: nowrap;

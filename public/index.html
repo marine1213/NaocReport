@@ -172,12 +172,9 @@
 	      	<button type="button" class="searchButton" onclick="this.nextElementSibling.focus()">
 	           <i class="fa fa-search"></i>
 	        </button>
-	   	  	<div class="dropdown">
-		        <input type="text" class="searchTerm dd-input" placeholder="Tìm BTXM..." oninput="logE(event.target.value);"> 
+	   	  	<div class="dropdown" id="dropDownSearchBar">
+		        <input type="text" class="searchTerm dd-input" placeholder="Tìm BTXM..." oninput="onSearching(event.target.value);"> 
 							  <ul class="dd-menu">
-							    <li class="divider"></li>
-							    <li>Another action</li>
-							    <li>Something else here</li>
 							  </ul>
 				  </div>
       </div>
@@ -203,7 +200,7 @@
 		<script defer type="text/javascript" src="lib/formScriptUiCtrl.js"></script>
 		<script defer type="text/javascript" src="lib/formScriptLog.js"></script>
     <script defer type="text/javascript" src="lib/mapCtrl.js"></script>
-    <script defer type="text/javascript" src="lib/ui/dropDown/dropDown.js"></script>
+    <script defer type="text/javascript" src="lib/ui/dropDown/dropDownCtrl.js"></script>
     <script defer type="text/javascript" src="lib/api/upload/googleDriveScript.js"></script>
     <script defer type="text/javascript" src="lib/formScriptInit.js"></script>
     <script defer type="text/javascript" src="lib/utils/shortcut.js"></script>

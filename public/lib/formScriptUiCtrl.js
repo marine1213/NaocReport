@@ -28,7 +28,7 @@
    function closeOverlayForm () {
      document.getElementById("input_form").style.display = "none";
    }
-   
+   //===========Input Form===============
    function resetInputForm(){
      $(".form-check-input").prop('checked', false);
      $("#form_radio_status_checked").val("init");
@@ -37,7 +37,8 @@
      $('#files_input').val("");
 //     $('textarea').val("");
    }
-   
+
+   //===========show snackbar===============
    function showToast(text) {
      var snackbarStack = [];
      
@@ -79,3 +80,5 @@
      $("input[name=congnghetramva]").change(function () {setCongNghe(this.value);});
      $("input[name=nguyhiem]").change(function () {setMucdo(this.value);});
    }
+   //===========drop down===============
+   onSearching=(inputTx)=>{let t=loadedData.filter(row=>row.name.includes(inputTx)).map(row=>row.name);dropDown.get('dropDownSearchBar').setData(t);}
