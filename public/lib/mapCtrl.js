@@ -121,6 +121,13 @@
 	      alert('Your browser does not support Mapbox GL');
 	  }
 	  
+	  publicData.flyTo=(lng,lat)=>{map.flyTo({
+	  	zoom: 22,
+		speed: 0.8,
+		curve: 1,
+	  	center:[lng, lat]
+	  }); }
+
 	  publicData.addMarker = function(lat,lng,markerProperties){
 	    // //log.event('mapAddMarker','callback add marker');
 	    var pointJSON = {

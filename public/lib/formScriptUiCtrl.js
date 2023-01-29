@@ -79,6 +79,7 @@
      $("input[name=nv]").change(function () {setSuco(this.value);});
      $("input[name=congnghetramva]").change(function () {setCongNghe(this.value);});
      $("input[name=nguyhiem]").change(function () {setMucdo(this.value);});
+     dropDown.onItemClicked=(item)=>{mapPage.flyTo(item.lng,item.lat);}
    }
    //===========drop down===============
-   onSearching=(inputTx)=>{let t=loadedData.filter(row=>row.name.includes(inputTx)).map(row=>row.name);dropDown.get('dropDownSearchBar').setData(t);}
+   onSearching=(inputTx)=>{let t=loadedData.filter(row=>row.name.includes(inputTx));dropDown.get('dropDownSearchBar').setData(t);}

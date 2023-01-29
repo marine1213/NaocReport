@@ -169,11 +169,11 @@
    <div class="wrapSearch">
 
       <div class="search">
-	      	<button type="button" class="searchButton" onclick="this.nextElementSibling.focus()">
-	           <i class="fa fa-search"></i>
-	        </button>
+	      	<label type="button" class="searchButton" onclick="let elm=this.nextElementSibling.children[0],result=this.children[1].checked; elm.classList[result?'add':'remove']('expanded'); if(result) elm.focus(); else dropDown.hide('dropDownSearchBar')">
+	           <i class="fa fa-search"></i><input type="checkbox"><!-- console.log(); -->
+	        </label>
 	   	  	<div class="dropdown" id="dropDownSearchBar">
-		        <input type="text" class="searchTerm dd-input" placeholder="Tìm BTXM..." oninput="onSearching(event.target.value);"> 
+		        <input type="text" class="searchTerm dd-input " placeholder="Tìm BTXM..." oninput="onSearching(event.target.value);" onfocus="dropDown.show('dropDownSearchBar');"> 
 							  <ul class="dd-menu">
 							  </ul>
 				  </div>

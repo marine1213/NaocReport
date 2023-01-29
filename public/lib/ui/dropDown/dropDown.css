@@ -22,13 +22,13 @@
   list-style-type: none;
 }
 
-.dd-input + .dd-menu {
+/*.dd-input + .dd-menu {
   display: none;
-} 
-
+} */
+/*
 .dd-input:focus + .dd-menu {
   display: block;
-} 
+} */
 
 .dd-menu li {
   width: 200px;

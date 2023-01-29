@@ -17,9 +17,9 @@ try { let app = firebase.app(); let features = [ 'auth', 'firestore', 'analytics
     (user)=>{
       console.log(user);
       (user)?/*Signed in.*/processUserData(user,p.callback):
-      (localStorage.getItem("accessToken")?firebase.auth().currentUser.getIdToken(true).then((accessToken)=>{localStorage.setItem("accessToken",accessToken);}):
+      // (localStorage.getItem("accessToken")?firebase.auth().currentUser.getIdToken(true).then((accessToken)=>{localStorage.setItem("accessToken",accessToken);}):
                     /*Signed out.*/window.location.assign('signin.html')
-                    );
+                    // );
                   }, 
     (error)=>{logE(null,error);});
 };

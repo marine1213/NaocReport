@@ -6,7 +6,7 @@
   display: flex;
 }
 
-.searchTerm {
+.searchTerm{
   border: 3px solid #FFFFFF; /*0/0B4CC*/
   border-right: none;
   padding: 5px;
@@ -21,7 +21,7 @@
   transition: all .5s ease; 
 }
 
-.searchTerm:focus{
+.expanded{
   color: #000000;
   width: 200px;
 }
@@ -29,13 +29,14 @@
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid #FFFFFF;
-  background: #FFFFFF;
+  border: 1px solid #00B4CC;
   text-align: center;
   color: #000000;
   border-radius: 5px 0 0 5px;
   cursor: pointer;
   font-size: 20px;
+  background-color: #ffffff;
+  border-color: #ffffff;
 }
 
 .wrapSearch{
@@ -44,6 +45,9 @@
   position: fixed; /* Sit on top of the screen */
   margin-left: 50px;
   margin-top: 10px;
-  border: 2px solid #e8e8e847;
-  border-radius: 4px 4px 4px 4px;
+  margin-bottom: 0;
+}
+
+label>input{
+  display: none;
 }
