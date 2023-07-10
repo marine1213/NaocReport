@@ -13,7 +13,7 @@ var form = (function(){
    var userName, userEmail, userInfo;
    
    //===========private function==============
-  sendData=()=>{ mainData.db.add(data); formSubmitted("Dữ liệu đã được gửi đi!");}
+  sendData=()=>{ mainData.db.add(data,data.appName); formSubmitted("Dữ liệu đã được gửi đi!");}
 
   removeData=()=>{ mainData.db.remove(data); formSubmitted("Dữ liệu đã được gửi đi!");}
    
@@ -26,7 +26,7 @@ var form = (function(){
    publicData.getPermissionCode=()=>permissionCode;
    publicData.setLatLng=(newlat,newlng)=>{lat = newlat; lng = newlng;}
 
-   publicData.setData=(status, emergencyLevel, repairedMethod, fileId,size,tileName, detail, refrencedId)=>{
+   publicData.setData=(status, emergencyLevel, repairedMethod, fileId,size,tileName, detail, refrencedId, appName)=>{
      let date = new Date(); fmDate = getFmDateTime(date);   // chuyển Object Date về dạng String 
      // '?' giúp tăng số last row lên, nếu để trống, dòng này coi như không có mới
      // data = ['?', date, lat+'', lng+'', tileName, status, emergencyLevel, repairedMethod, fileId, '',size, detail,userName, userEmail];
@@ -35,7 +35,8 @@ var form = (function(){
       timestamp:fmDate,
       lat:lat+'', lng:lng+'', name:tileName, status:status, level:emergencyLevel, recovered:repairedMethod, 
       img:fileId, size:size, detail:detail, 
-      user:userName, email: userEmail
+      user:userName, email: userEmail,
+      appName:appName
      };
      if(refrencedId) data.refrencedId = refrencedId;
    }
@@ -60,7 +61,7 @@ var form = (function(){
      });
     }
       
-   publicData.sendDataToDB = function(inData){
+   publicData.sendDataToDB = function(inData,appName){
     showMessage('Đang gửi thông tin...');
     
     // var colCode = { timestamp:0, lat:1, lng:2, posName:3, posEvent:4, posEmergencyLvl:5, posRecovered:6, posImg:7, posSize:9, posDescription:10, userName:11, userEmail:12, };
@@ -105,7 +106,7 @@ var form = (function(){
 })();
 //============================end========================================
 //=================Event Handler Data Handler===========================
-function formSubmitting(event){
+function formSubmitting(event,appName){
   event.preventDefault();      // ngăn tạo trang trắng
       
   onValidateInputData().then(function(inputData) {
@@ -119,7 +120,7 @@ function formSubmitting(event){
         resetInputForm();
         closeOverlayForm();
         inputData.fileId = '';
-        form.sendDataToDB(inputData);
+        form.sendDataToDB(inputData,appName);
       }
       else
         showError(error);
@@ -139,7 +140,7 @@ function onValidateInputData(){ // các trường bắt buộc phải có
       return reject('Loại sự cố (nứt vỡ,...) phải được chọn!');//return ;
   
     if(radio_status_checking != 'Đã xử lý xong' && radio_emergency_level_checking == 'init')
-      return reject('Mức độ nguy hiểm phải được chọn!');
+      return reject('Mức độ khẩn cấp phải được chọn!');
       
     if(radio_status_checking == 'Đã xử lý xong' && done_radio_checking == 'init')
       return reject('Phương pháp xử lý phải được chọn!');
@@ -203,9 +204,9 @@ function onValidateFile(){
       // logE('loadedDataFromDB',JSON.stringify(doc.data()) );
       let emergencyLv = 9;
       switch(docData.level){ 
-        case 'Rất nguy hiểm':   markerProperties.icon = 'flag-red'; break; 
-        case 'Nguy hiểm':       markerProperties.icon = 'flag-yellow'; break; 
-        case 'Ít nguy hiểm':    markerProperties.icon = 'flag-green'; break; 
+        case 'Rất gấp':   markerProperties.icon = 'flag-red'; break; 
+        case 'Gấp':       markerProperties.icon = 'flag-yellow'; break; 
+        case 'Bình thường':    markerProperties.icon = 'flag-green'; break; 
       }
 
       popupContent = "<div><strong>"+docData.name+"</strong>";

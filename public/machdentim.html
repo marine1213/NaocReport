@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sơ đồ Đèn tim Khu bay</title>
+
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.4.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.4.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-performance.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+
+	<!--Mapbox GL plugin mapbox.js -->
+	<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="./css/menu.css"> 
+
+	<!--Fonts-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900' rel='stylesheet' type='text/css'>
+
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #map {position : absolute;height : 100%;width : 100vw}
+    </style>
+   
+ 
+  </head>
+  <body>
+  	<nav class="menu" id="menu"></nav>
+		<div id="map"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        // try {
+        //   let app = firebase.app();
+        //   let features = [
+        //     'auth', 
+        //     'firestore',
+        //     'analytics', 
+        //     'performance',
+        //   ].filter(feature => typeof app[feature] === 'function');
+        //   loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        // } catch (e) {
+        //   console.error(e);
+        //   loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        // }
+      });
+    </script>
+    <script>
+	//================================map control===============================
+	var config={bearing:17,coorL:'[105.80615562601713, 21.218605193793564]',coorM:'[105.8043684, 21.2140661]',mapboxStyle:'mapbox://styles/cuongbk56/ckngt11310hdt17p80pgjhhw9',mapboxAccessToken:'pk.eyJ1IjoiY3VvbmdiazU2IiwiYSI6ImNqeHJzbWJxbDBjY3Yzb241aWY1Nmt6OG0ifQ.98MN1Dl1vrRJKbnkZTnxbQ'}
+	var configs = [
+	{source:'dentim1B-line-RC1-src',layerId:'1B-lineRC1',data:'./maps/dentim1B-line-RC1.geojson',type:'line',paint:{'line-color':"#40fe10",'line-width':2,'line-opacity':1},layout:{}},
+	{source:'dentim1B-line-RC2-src',layerId:'1B-lineRC2',data:'./maps/dentim1B-line-RC2.geojson',type:'line',paint:{'line-color':"#fbdc13",'line-width':2,'line-opacity':1},layout:{}},
+	{source:'dentim1B-line-Dist-src',layerId:'1B-lineDist',data:'./maps/dentim1B-line-distribution.geojson',type:'line',paint:{'line-color':"#363030",'line-width':3,'line-opacity':1},layout:{}},
+	{source:'denle-r1-line-src',layerId:'R1',data:'./maps/denle-r1.geojson',type:'line',paint:{'line-color':"#00ffff",'line-width':3,'line-opacity':1},layout:{}},
+	{source:'denle-r1-tx-src',layerId:'R1-tx',data:'./maps/denle-r1-tx.geojson',type:'symbol',paint:{'text-color':"#fbdc13",'text-opacity':1,'text-halo-color':'#ffffff','text-halo-width':2},layout:{'text-size':16,'text-field':["to-string",["get","name"]]},minzoom:16},
+	{source:'denle-r2-line-src',layerId:'R2',data:'./maps/denle-r2.geojson',type:'line',paint:{'line-color':"#558855",'line-width':3,'line-opacity':1},layout:{}},
+	{source:'denle-r2-tx-src',layerId:'R2-tx',data:'./maps/denle-r2-tx.geojson',type:'symbol',paint:{'text-color':"#ff1113",'text-opacity':1,'text-halo-color':'#ffffff','text-halo-width':2},layout:{'text-size':16,'text-field':["to-string",["get","name"]]},minzoom:16},
+	{source:'denle-tw1-line-src',layerId:'Tw1',data:'./maps/denle-tw1.geojson',type:'line',paint:{'line-color':"#ff2e2e",'line-width':3,'line-opacity':1},layout:{}},
+	//Credit to: https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/?q=text-fields%20formula&size=n_20_n
+	//Credit to: https://docs.mapbox.com/studio-manual/examples/convert-units/
+	{source:'denle-tw1-tx-src',layerId:'Tw1-tx',data:'./maps/denle-tw1-tx.geojson',type:'symbol',paint:{'text-color':"#fbdc13",'text-opacity':1,'text-halo-color':'#ff2e2e','text-halo-width':2},layout:{'text-size':16,'text-field':["to-string",["get","name"]]},minzoom:16},
+	{source:'denle-tw2-line-src',layerId:'Tw2',data:'./maps/denle-tw2.geojson',type:'line',paint:{'line-color':"#5126fd",'line-width':3,'line-opacity':1},layout:{}},
+	{source:'denle-tw2-tx-src',layerId:'Tw2-tx',data:'./maps/denle-tw2-tx.geojson',type:'symbol',paint:{'text-color':"#fbdc13",'text-opacity':1,'text-halo-color':'#5126fd','text-halo-width':2},layout:{'text-size':16,'text-field':["to-string",["get","name"]]},minzoom:16},
+	{source:'denle-tw3-line-src',layerId:'Tw3',data:'./maps/denle-tw3.geojson',type:'line',paint:{'line-color':"#329ea8",'line-width':3,'line-opacity':1},layout:{}},
+	{source:'denle-tw3-tx-src',layerId:'Tw3-tx',data:'./maps/denle-tw3-tx.geojson',type:'symbol',paint:{'text-color':"#fbdc13",'text-opacity':1,'text-halo-color':'#329ea8','text-halo-width':2},layout:{'text-size':16,'text-field':["to-string",["get","name"]]},minzoom:16},
+	{source:'denle-tw4-line-src',layerId:'Tw4',data:'./maps/denle-tw4.geojson',type:'line',paint:{'line-color':"#fbdc13",'line-width':3,'line-opacity':1},layout:{}},
+	{source:'denle-tw4-tx-src',layerId:'Tw4-tx',data:'./maps/denle-tw4-tx.geojson',type:'symbol',paint:{'text-color':"#fbdc13",'text-opacity':1,'text-halo-color':'#ffffff','text-halo-width':2},layout:{'text-size':16,'text-field':["to-string",["get","name"]]},minzoom:16},
+	{source:'denle-tw5-line-src',layerId:'Tw5',data:'./maps/denle-tw5.geojson',type:'line',paint:{'line-color':"#5126fd",'line-width':3,'line-opacity':1},layout:{}},
+	{source:'denle-tw5-tx-src',layerId:'Tw5-tx',data:'./maps/denle-tw5-tx.geojson',type:'symbol',paint:{'text-color':"#5126fd",'text-opacity':1,'text-halo-color':'#5126fd','text-halo-width':2},layout:{'text-size':16,'text-field':["to-string",["get","name"]]},minzoom:16},
+	{source:'denle-tw6-line-src',layerId:'Tw6',data:'./maps/denle-tw6.geojson',type:'line',paint:{'line-color':"#329ea8",'line-width':3,'line-opacity':1},layout:{}},
+	{source:'denle-tw6-tx-src',layerId:'Tw6-tx',data:'./maps/denle-tw6-tx.geojson',type:'symbol',paint:{'text-color':"#fbdc13",'text-opacity':1,'text-halo-color':'#329ea8','text-halo-width':2},layout:{'text-size':16,'text-field':["to-string",["get","name"]]},minzoom:16},
+	{source:'denle-tw7-line-src',layerId:'Tw7',data:'./maps/denle-tw7.geojson',type:'line',paint:{'line-color':"#fbdc13",'line-width':3,'line-opacity':1},layout:{}},
+	{source:'denle-tw7-tx-src',layerId:'Tw7-tx',data:'./maps/denle-tw7-tx.geojson',type:'symbol',paint:{'text-color':"#5126fd",'text-opacity':1,'text-halo-color':'#fbdc13','text-halo-width':2},layout:{'text-size':16,'text-field':["to-string",["get","name"]]},minzoom:16},
+	{source:'denle-tw8-line-src',layerId:'Tw8',data:'./maps/denle-tw8.geojson',type:'line',paint:{'line-color':"#ff2e2e",'line-width':3,'line-opacity':1},layout:{}},
+	{source:'denle-tw8-tx-src',layerId:'Tw8-tx',data:'./maps/denle-tw8-tx.geojson',type:'symbol',paint:{'text-color':"#fbdc13",'text-opacity':1,'text-halo-color':'#ff2e2e','text-halo-width':2},layout:{'text-size':16,'text-field':["to-string",["get","name"]]},minzoom:16},
+	{source:'denle-tw9-line-src',layerId:'Tw9',data:'./maps/denle-tw9.geojson',type:'line',paint:{'line-color':"#329ea8",'line-width':3,'line-opacity':1},layout:{}},
+	{source:'denle-tw9-tx-src',layerId:'Tw9-tx',data:'./maps/denle-tw9-tx.geojson',type:'symbol',paint:{'text-color':"#fbdc13",'text-opacity':1,'text-halo-color':'#ffffff','text-halo-width':2},layout:{'text-size':16,'text-field':["to-string",["get","name"]]},minzoom:16},
+	{source:'denle-tw10-line-src',layerId:'Tw10',data:'./maps/denle-tw10.geojson',type:'line',paint:{'line-color':"#fbdc13",'line-width':3,'line-opacity':1},layout:{}},
+	{source:'denle-tw10-tx-src',layerId:'Tw10-tx',data:'./maps/denle-tw10-tx.geojson',type:'symbol',paint:{'text-color':"#fbdc13",'text-opacity':1,'text-halo-color':'#ffffff','text-halo-width':2},layout:{'text-size':16,'text-field':["to-string",["get","name"]]},minzoom:16},
+	];
+
+	var mapPage = function(){
+
+	  var publicData = {};
+	  var loadedPopupList = [];
+	  var currentMarker = {lMarker:null};
+	  var lastMarkerFlag = false;
+	    
+	  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);        
+	  // Credit to: https://stackoverflow.com/questions/1248081/get-the-browser-viewport-dimensions-with-javascript
+
+	  
+	//  var coorM = [105.8043684, 21.2140661]; //NB
+	//  var coorL = [105.80615562601713, 21.218605193793564]; //NB
+	  
+	  var coorM = JSON.parse(config.coorM);
+	  var coorL = JSON.parse(config.coorL);
+	  
+	  var centerCoor = w<751?coorM:coorL;
+	  var zoomlv = w < 449?12:w < 751?13:14;
+
+	  // GeoJSON object to hold the flag features
+	  var geojson = {"type": "FeatureCollection","features": []};
+	  
+	  var map = new mapboxgl.Map({
+	      container: 'map',
+	      style: 'mapbox://styles/cuongbk56/ckngt11310hdt17p80pgjhhw9',
+	     // style: 'mapbox://styles/iyalolo/cjzvyworg0c921cpbga1xmdn6', //Mapbox DenKB
+	      center: centerCoor,
+	      zoom: zoomlv, // starting zoom
+	//      maxBounds: [[105.71511,21.088],[105.892,21.274]],
+	      // bearing: parseInt(config.bearing),
+	     bearing: 17, // goc nghieng
+	     accessToken: 'pk.eyJ1IjoiY3VvbmdiazU2IiwiYSI6ImNqeHJzbWJxbDBjY3Yzb241aWY1Nmt6OG0ifQ.98MN1Dl1vrRJKbnkZTnxbQ'
+	      // accessToken: 'pk.eyJ1IjoiaXlhbG9sbyIsImEiOiJjamZ0dGg0YWwwbW8zMzNxa3RyM3U2YjN2In0.RZ0yJN-V8GbpPclRSIg_sw'
+	    });
+	    
+	  //Credit to: https://docs.mapbox.com/mapbox-gl-js/example/navigation/
+	  var geoLocOption = {
+	    positionOptions: {enableHighAccuracy:true,timeout:10000},
+	    fitBoundsOptions: {maxZoom: 19},
+	    trackUserLocation: true
+	  };
+	  var geoLocControl = new mapboxgl.GeolocateControl(geoLocOption);
+	  geoLocControl.on('geolocate', onLocationFound);
+	  
+	    // Add zoom and rotation controls to the map.
+	  map.addControl(new mapboxgl.NavigationControl(),'top-left');
+	  map.addControl(new mapboxgl.FullscreenControl(), 'top-left');
+	  map.addControl(geoLocControl,'top-left');
+	  
+	  
+	//==========private===============
+	  //Register map events
+	  
+	    map.on('click', onMapClicked);
+	    map.on('moveend', function(e){
+	      // load data(coordinate, ten tam, su co, ngay) từ spreadsheet// theo vung zoom nhìn thấy
+	      // add marker theo coordinate
+	      // add popup theo onclick
+	      // loadMapPermissionCodeAndDataFromServer();
+	      
+	    });
+	    map.on('click','suco-flag', function(e){
+	     // xoa popup truoc
+	     if(loadedPopupList.length > 0)
+	       loadedPopupList.pop().remove();
+	     
+	     var coordinates = e.features[0].geometry.coordinates.slice();
+	     var markerData = e.features[0].properties;
+	     
+	     var loadedPopup = new mapboxgl.Popup({offset:[10,-30], closeOnClick:false, anchor:'bottom' })
+	     .setLngLat(coordinates)
+	     .setHTML(markerData.popupContent)
+	     .on('open',function(popup){
+	         // //log.event('onPopupData', 'loading image'); //TODO: put data into geojson
+	         
+	         if(markerData.imageList){
+	           var imgList = JSON.parse(markerData.imageList);  //sửa lỗi mảng JSON
+	           for(var imgId = 0; imgId < imgList.length; imgId++){
+	             var fileId = imgList[imgId];
+	             var imageLink = form.getImgLinkData(fileId);
+	             document.getElementById('img_'+fileId).src = imageLink;
+	           } 
+	         }
+	     })
+	     .on('close',function(popup){
+	         loadedPopupList.pop();
+	         //Credit to: https://stackoverflow.com/questions/3455405/how-do-i-remove-a-key-from-a-javascript-object
+	     });
+	     
+	     loadedPopupList.push(loadedPopup);
+	     loadedPopup.addTo(map);
+	   });
+	    
+	    var configIdList = null;
+	    // Change the cursor style as a UI indicator.
+	 	map.on('mouseenter', 'suco-flag', function(e) {map.getCanvas().style.cursor = 'pointer';});
+		map.on('mouseleave', 'suco-flag', function() {map.getCanvas().style.cursor = '';});
+	    map.on('load', function() {
+	        // //log.event('maploaded','add layer suco with data source');
+			map.addSource('flag', {"type": "geojson","data": geojson});
+	        map.addLayer({
+	          id: 'suco-flag',
+	          type: 'symbol',
+	          source: 'flag',
+	          layout: {
+	             "icon-image": "{icon}-30",
+	             "icon-allow-overlap": true,
+	             "icon-anchor": "bottom-left"
+	          }
+	       });
+			configIdList = configs.map(config=>{
+				map.addSource(config.source,{"type": "geojson",data: config.data});
+	    	map.addLayer({id:config.layerId,type: config.type,source: config.source,paint: config.paint,layout: config.layout,minzoom:config.minzoom?config.minzoom:10 });
+	    	return config.layerId;
+	    });
+	   });
+
+	   map.on('idle', function () {
+			// If these two layers have been added to the style,
+			// add the toggle buttons.
+			
+			if (configIdList == null) return;
+			var layers = document.getElementById('menu');
+
+			configIdList.forEach(id=>{
+				// if already added then skip this id
+				if (document.getElementById(id)) return;
+				// if layer for this id is not added then skip this id
+				if (!map.getLayer(id)) return;
+				// if layer id has '-tx' then skip this id
+				if (id.includes('-tx')) return;
+				// else add '-tx' to get tx layer
+				var noTxLayer = (!map.getLayer(id+'-tx'));
+
+				// Create a link.
+				var link = document.createElement('a'); link.id = id; link.href = '#'; link.textContent = id; link.className = 'active', link.textLayerContent = !noTxLayer;
+				
+				// Show or hide layer when the toggle is clicked.
+				link.onclick = function (e) {
+					var clickedLayer = this.textContent;e.preventDefault();e.stopPropagation();
+					var visibility = map.getLayoutProperty( clickedLayer, 'visibility' );visibility = visibility==undefined?'visible':visibility;
+					var lastSavedPreference = localStorage.getItem(clickedLayer); 
+
+					// Toggle layer visibility by changing the layout object's visibility property.
+					if (visibility === 'visible') {
+						lastSavedPreference = 0;
+
+						map.setLayoutProperty(clickedLayer,'visibility','none');this.className = '';
+						if(link.textLayerContent) map.setLayoutProperty(clickedLayer+'-tx','visibility','none');
+					} else {
+						lastSavedPreference= 1;
+
+						map.setLayoutProperty(clickedLayer,'visibility','visible');this.className = 'active';
+						if(link.textLayerContent) map.setLayoutProperty(clickedLayer+'-tx','visibility','visible');
+					}
+
+					localStorage.setItem(clickedLayer, lastSavedPreference);
+				};
+				layers.appendChild(link);
+			});
+
+			if(initLayers){
+				Array.from(layers.children).forEach(elm=>{
+					if(elm.id=='ctrlMenu') return;var display = elm.style.display; elm.style.display='none';
+					localStorage.getItem(elm.id)==1?0:document.getElementById('menu').children[elm.id].click();
+					console.log(elm.id+' - '+localStorage.getItem(elm.id));
+				}); initLayers = false;
+			}
+			
+		});
+	   var initLayers = true;
+	  createMenuCtrl=()=>{
+	  	var ctrl = document.getElementById('menu');
+	  	var link = document.createElement('a'); link.id = 'ctrlMenu'; link.href = '#'; link.textContent = 'Mở / Đóng Layer'; link.className = '';
+	  	link.onclick= function(e){
+	  		Array.from(link.parentElement.children).forEach(elm=>{if(elm.id=='ctrlMenu') return;var display = elm.style.display; if(display=='none'){link.className='active';elm.style.display = 'block'}else{link.className='';elm.style.display = 'none'}});
+	  	}
+	  	ctrl.appendChild(link);
+	  }
+	  createMenuCtrl();
+	//==========public===============      
+	  publicData.initMap = function(){
+	    if (!mapboxgl.supported()) 
+	      alert('Your browser does not support Mapbox GL');
+	  }
+	  
+	  publicData.addMarker = function(lat,lng,markerProperties){
+	    // //log.event('mapAddMarker','callback add marker');
+	    var pointJSON = {
+	      type: "Feature",
+	      geometry: {
+	        type: "Point",
+	        coordinates: [lng,lat]
+	      },
+	      properties: markerProperties
+	    };
+	    geojson.features.push(pointJSON);
+	    log.value('mapAddMarker', 'JSON: ' + JSON.stringify(geojson.features));
+	  }
+	  
+	  publicData.updateSource = function(){
+	    if(map&&geojson)
+	      map.getSource('geojson').setData(geojson);
+	  }
+	  publicData.removeMarker = function(tileName){
+	    // xoa marker 
+	    //log.event('remove marker','remove marker id= '+ tileName);
+	    loadedPopupList.pop().remove();
+	    geojson.features = geojson.features.filter(function(flag) {
+	      return flag.properties.tileName !== tileName;
+	    });
+	  }
+	  
+	  publicData.removeAllMarkers = function(){
+	    // xoa marker 
+	    //log.event('remove marker','remove all markers');
+	    if(loadedPopupList.length > 0)
+	      loadedPopupList.pop().remove();
+	    geojson.features = geojson.features.filter(function() {return false;});
+	  }  
+
+	  var stateHolding = 0;
+	  publicData.onAddDataMarker = function(lat,lng) {
+	    // xoa marker cũ
+	    if(lastMarkerFlag)
+	      removeLastMarker();
+	      
+	      
+	    // thêm marker mới và mở form nhập
+	    var tempMarker = new mapboxgl.Marker({draggable:true}).setLngLat([lng,lat]).addTo(map);
+	    tempMarker.on('dragstart', function(){ 
+	      var lngLat = currentMarker.lMarker.getLngLat(); 
+	      stateHolding = 0;
+	      setTimeout(function(){ if(stateHolding == 0) {currentMarker.lMarker.prevLngLat = lngLat;  currentMarker.lMarker.setLngLat(lngLat); stateHolding = 1;}},10000);
+	    });
+	    tempMarker.on('dragend', function(){ 
+	      if(stateHolding == 1)
+	        {currentMarker.lMarker.setLngLat(currentMarker.lMarker.prevLngLat); }
+	      var lngLat = currentMarker.lMarker.getLngLat();
+	      collectData(lngLat.lat,lngLat.lng);
+	      stateHolding = 2;
+	    });
+	    currentMarker.lMarker = tempMarker;
+	    lastMarkerFlag = true;
+	    collectData(lat,lng);
+	  }
+	  
+	  publicData.onQueryRenderedFeatures = function(e){
+	    return map.queryRenderedFeatures(e.point);
+	  }
+
+	  publicData.map = ()=>map;
+	//=====private data process=======
+	function collectData(lat,lng) {
+	  // form.setLatLng(lat,lng);
+	  
+	  // smoth openning popup
+	  setTimeout(function() {
+	  	// openOverlayForm(true,-1);
+	  }, 100);
+	}
+
+	  function removeLastMarker(){currentMarker.lMarker.remove();}
+	      return publicData;
+	}();
+
+	  function onLocationFound(position){
+	    var geoData = {
+	      lat: position.coords.latitude,
+	      lng: position.coords.longitude,
+	      accuracy: position.coords.accuracy,
+	    }
+	    log.value('onLocationFound','timestamp: '+ position.timestamp + '\n coor:'+JSON.stringify(geoData));
+	    // xóa marker cũ, thêm marker mới và mở form nhập
+	    mapPage.onAddDataMarker(geoData.lat, geoData.lng);
+	  }
+
+	   function onMapClicked(e){     
+	     //log.event('onMapClicked', 'add pointing marker');
+	     try{
+	       if(e != undefined){
+	         var features = mapPage.onQueryRenderedFeatures(e);
+	         if(features.length){ // neu click vao co thi ko phan ung alert(JSON.stringify(features));
+	         }
+	         else  // xóa marker cũ, thêm marker mới và mở form nhập
+	          mapPage.onAddDataMarker(e.lngLat.lat,e.lngLat.lng);
+	       }
+	     }catch(error){
+	         // log.error('mapClick',error);
+	     }
+	   }
+	//============================end========================================
+	/* Recycle code
+	//    var el = document.createElement('div');
+	//    el.className = 'marker-outer';
+	//    el.innerHTML = "<div class=marker></div>";
+	    //Credit to: https://stackoverflow.com/questions/10585029/parse-an-html-string-with-js
+	   
+	//    var tempMarker = new mapboxgl.Marker(el).setLngLat([lng,lat]).addTo(map);
+	//    var popup = new mapboxgl.Popup({ offset: 25, closeOnClick:false }).setText('Noi Bai.').setLngLat([lng,lat]);
+	//    tempMarker.setPopup(popup);
+	*/
+	</script>
+  </body>
+</html>

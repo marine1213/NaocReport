@@ -60,36 +60,40 @@ class FirestoreDB{
 	constructor(){}
 // log (replay), active panel (map), indexed name (report), indexed day (report)
 	
-	add(data){
+	add(data, appName){
+		appName=appName?appName:'';
 		// let timestampId = data.timestamp.replace("/",)
 		// add to log
-		db.collection('Log').doc(data.id).set(data).catch(e=>console.error("Error adding document Log: ", error));
+		db.collection(appName+'Log').doc(data.id).set(data).catch(e=>console.error("Error adding document Log: ", error));
 		// add to active panel
-		db.collection('Active').doc(data.id).set(data).catch(e=>console.error("Error adding document Active: ", error));
+		db.collection(appName+'Active').doc(data.id).set(data).catch(e=>console.error("Error adding document Active: ", error));
 		// add to indexed Name
-		db.collection('IndexedName').doc(data.name.replace('/','.')+'/'+data.id.replace('_','/')).set(data).catch(e=>console.error("Error adding document IndexedName: ", error));
+		db.collection(appName+'IndexedName').doc(data.name.replace('/','.')+'/'+data.id.replace('_','/')).set(data).catch(e=>console.error("Error adding document IndexedName: ", error));
 		// add to indexed Day
-		db.collection('IndexedDay').doc(getFmDate(new Date(),'yyyy/mmdd/'+data.id.split('_')[1])).set(data).catch(e=>console.error("Error adding document IndexedDay: ", error));
+		db.collection(appName+'IndexedDay').doc(getFmDate(new Date(),'yyyy/mmdd/'+data.id.split('_')[1])).set(data).catch(e=>console.error("Error adding document IndexedDay: ", error));
 	}
 
-	remove(data){
+	remove(data, appName){
+		appName=appName?appName:'';
 		// let timestampId = data.timestamp.replace("/",)
 		// add to log
-		db.collection('Log').doc(data.id).set(data).catch(e=>console.error("Error remove document Log: ", error));
+		db.collection(appName+'Log').doc(data.id).set(data).catch(e=>console.error("Error remove document Log: ", error));
 		// add to active panel
-		db.collection('Active').doc(data.refrencedId).delete().catch(e=>console.error("Error remove document Active: ", error));
+		db.collection(appName+'Active').doc(data.refrencedId).delete().catch(e=>console.error("Error remove document Active: ", error));
 		// add to indexed Name
-		db.collection('IndexedName').doc(data.name.replace('/','.')+'/'+data.id.replace('_','/')).set(data).catch(e=>console.error("Error adding document IndexedName: ", error));
+		db.collection(appName+'IndexedName').doc(data.name.replace('/','.')+'/'+data.id.replace('_','/')).set(data).catch(e=>console.error("Error adding document IndexedName: ", error));
 		// add to indexed Day
-		db.collection('IndexedDay').doc(getFmDate(new Date(),'yyyy/mmdd/'+data.id.split('_')[1])).set(data).catch(e=>console.error("Error adding document IndexedDay: ", error));
+		db.collection(appName+'IndexedDay').doc(getFmDate(new Date(),'yyyy/mmdd/'+data.id.split('_')[1])).set(data).catch(e=>console.error("Error adding document IndexedDay: ", error));
 	}
 
-	getActive(resultPromise){
-		db.collection('Active').get().then(resultPromise).catch(this.genericError);
+	getActive(resultPromise,appName){
+		appName=appName?appName:'';
+		db.collection(appName+'Active').get().then(resultPromise).catch(this.genericError);
 	}
 
-	get(){
-		db.collection('Active').get().then(this.genericListData).catch(this.genericError);
+	get(appName){
+		appName=appName?appName:'';
+		db.collection(appName+'Active').get().then(this.genericListData).catch(this.genericError);
 	}
 	genericDocData(doc){if(doc.exists) logE('getDB:'+JSON.stringify(doc.data())); else logE('No such document!')}
 	genericListData(snapshot){snapshot.forEach((doc)=>{logE(`getDB: ${doc.id}, " => ", ${JSON.stringify(doc.data())}`)})};

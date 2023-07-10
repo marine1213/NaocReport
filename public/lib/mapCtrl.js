@@ -1,5 +1,6 @@
 	//================================map control===============================
-	var config={bearing:17,coorL:'[105.80615562601713, 21.218605193793564]',coorM:'[105.8043684, 21.2140661]',mapboxStyle:'mapbox://styles/cuongbk56/cl6m1rma1000g14nfwqczpex5',mapboxAccessToken:'pk.eyJ1IjoiY3VvbmdiazU2IiwiYSI6ImNqeHJzbWJxbDBjY3Yzb241aWY1Nmt6OG0ifQ.98MN1Dl1vrRJKbnkZTnxbQ'}
+	// var config={bearing:17,coorL:'[105.80615562601713, 21.218605193793564]',coorM:'[105.8043684, 21.2140661]',mapboxStyle:'mapbox://styles/cuongbk56/cl6m1rma1000g14nfwqczpex5',mapboxAccessToken:'pk.eyJ1IjoiY3VvbmdiazU2IiwiYSI6ImNqeHJzbWJxbDBjY3Yzb241aWY1Nmt6OG0ifQ.98MN1Dl1vrRJKbnkZTnxbQ'}
+	var config={bearing:17,coorL:'[105.80615562601713, 21.218605193793564]',coorM:'[105.8043684, 21.2140661]',mapboxStyle:'mapbox://styles/cuongbk56/ckngt11310hdt17p80pgjhhw9',mapboxAccessToken:'pk.eyJ1IjoiY3VvbmdiazU2IiwiYSI6ImNqeHJzbWJxbDBjY3Yzb241aWY1Nmt6OG0ifQ.98MN1Dl1vrRJKbnkZTnxbQ'}
 	var mapPage = function(){
 
 	  var publicData = {};
@@ -114,6 +115,8 @@
 	             "icon-anchor": "bottom-left"
 	          }
 	       });
+	        if (mapConfigOnLoad) 
+	       		mapConfigOnLoad(map);
 	   });
 	//==========public===============      
 	  publicData.initMap = function(){

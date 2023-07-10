@@ -1,0 +1,872 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.815633933997,
+                    21.2113285723662,
+                    -51527.6532928681
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_1"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.818665327914,
+                    21.2172979392253,
+                    -11.5527727034352
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_2"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.819377105399,
+                    21.2178520990717,
+                    -51527.6532928681
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_3"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.814226906297,
+                    21.2185896528009,
+                    -11.5527727034352
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_4"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.814938674269,
+                    21.2191438316134,
+                    -51527.6532928681
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_5"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.807856488273,
+                    21.2204312136918,
+                    -11.5527727034352
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_6"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.808568242518,
+                    21.2209854197267,
+                    -51527.6532928681
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_7"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.799737269569,
+                    21.2227778660143,
+                    -11.5527727034352
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_8"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.800449006299,
+                    21.2233321067412,
+                    -51527.6532928681
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_9"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.793791105275,
+                    21.2244962242707,
+                    -11.5527727034352
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_10"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.794502829164,
+                    21.2250504904022,
+                    -51527.6532928681
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_11"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.819221577718,
+                    21.2147753016307,
+                    -11.5527727034352
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_12"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.81993334475,
+                    21.21532945962,
+                    -51527.6532928681
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_13"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.817109989697,
+                    21.2153935002431,
+                    -11.5527727034352
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_14"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.817821752222,
+                    21.2159476672541,
+                    -51527.6532928681
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_15"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.811116679537,
+                    21.2171252073354,
+                    -11.5527727034352
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_16"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.811828429152,
+                    21.217679399956,
+                    -51527.6532928681
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_17"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.802889238541,
+                    21.2194980807657,
+                    -11.5527727034352
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_18"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.803600970393,
+                    21.2200523085398,
+                    -51527.6532928681
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_19"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.794164365447,
+                    21.2220238151036,
+                    -11.5527727034352
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_20"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.794876078485,
+                    21.2225780801501,
+                    -51527.6532928681
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_21"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.789029900487,
+                    21.2235085893015,
+                    -11.5527727034352
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_22"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.788220744554,
+                    21.2245037216815,
+                    -51527.6532928681
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_23"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.805798455808,
+                    21.2147348152587,
+                    -11.5527729688018
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_24"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.80737190988,
+                    21.2144442854165,
+                    -11.5527729688018
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_25"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.806729402062,
+                    21.2136948392491,
+                    -11.552772146727
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_26"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.808002739554,
+                    21.2134479294447,
+                    -11.5527716143151
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_27"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.808489052799,
+                    21.2148208840677,
+                    -11.552772146727
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_28"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.820261508047,
+                    21.2138038619877,
+                    -11.552772146727
+                ]
+            },
+            "properties": {
+                "name": "kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_29"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.807925229018,
+                    21.2161050931339,
+                    -11.552772146727
+                ]
+            },
+            "properties": {
+                "name": "kanivo k15",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_30"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.807596898058,
+                    21.2164049837036,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k16",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_31"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.805993627563,
+                    21.2167280999177,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k14",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_32"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.804817508875,
+                    21.2170109680319,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k13",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_33"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.804030433368,
+                    21.2172658379712,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k12",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_34"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.802033044111,
+                    21.2178431478422,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k11",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_35"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.800877006972,
+                    21.2181786868897,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k10",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_36"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.798808360288,
+                    21.2187797368917,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k1",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_37"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.797748004316,
+                    21.2190471940173,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k2",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_38"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.796683355159,
+                    21.2193908739396,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k3",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_39"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.794539271133,
+                    21.2200326000131,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k4",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_40"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.79353703671,
+                    21.2202959423391,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k5",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_41"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.792654781405,
+                    21.2205797684413,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k6",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_42"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.790445693518,
+                    21.2212081198544,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k7",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_43"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.794703182974,
+                    21.2262190870475,
+                    -11.5527741009998
+                ]
+            },
+            "properties": {
+                "name": "kanivo K29 ",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_44"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.802422691786,
+                    21.2238352480637,
+                    -11.5527740540337
+                ]
+            },
+            "properties": {
+                "name": "L=726m",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_45"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.802095569362,
+                    21.2239251590233,
+                    -11.5527737134086
+                ]
+            },
+            "properties": {
+                "name": "kanivo K28 ",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_46"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.810236530434,
+                    21.2215961912185,
+                    -11.5527740540337
+                ]
+            },
+            "properties": {
+                "name": "L=660m",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_47"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.809883268207,
+                    21.221696676295,
+                    -11.5527737134086
+                ]
+            },
+            "properties": {
+                "name": "kanivo K27 ",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_48"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.815729723374,
+                    21.2200082471196,
+                    -11.5527737134086
+                ]
+            },
+            "properties": {
+                "name": "kanivo K26 ",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_49"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.788789780945,
+                    21.2216966659051,
+                    -11.5527711367536
+                ]
+            },
+            "properties": {
+                "name": "kanivo k9",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_50"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.814804002894,
+                    21.2139622043181,
+                    -11.552773356393
+                ]
+            },
+            "properties": {
+                "name": "Kanivo",
+                "stroke": "#a55200",
+                "stroke-opacity": 1
+            },
+            "id": "kml_51"
+        }
+    ]
+}

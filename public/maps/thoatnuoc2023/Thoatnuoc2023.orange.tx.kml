@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<kml xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Thoatnuoc2023.orange.tx</name>
+<visibility>1</visibility>
+<Folder id="kml_ft_Thoatnuoc2023.orange.tx">
+<name>Thoatnuoc2023.orange.tx</name>
+<Placemark id="kml_1">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.815633933997,21.2113285723662,-51527.6532928681</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_2">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.818665327914,21.2172979392253,-11.5527727034352</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_3">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.819377105399,21.2178520990717,-51527.6532928681</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_4">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.814226906297,21.2185896528009,-11.5527727034352</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_5">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.814938674269,21.2191438316134,-51527.6532928681</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_6">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.807856488273,21.2204312136918,-11.5527727034352</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_7">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.808568242518,21.2209854197267,-51527.6532928681</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_8">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.799737269569,21.2227778660143,-11.5527727034352</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_9">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.800449006299,21.2233321067412,-51527.6532928681</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_10">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.793791105275,21.2244962242707,-11.5527727034352</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_11">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.794502829164,21.2250504904022,-51527.6532928681</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_12">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.819221577718,21.2147753016307,-11.5527727034352</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_13">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.81993334475,21.21532945962,-51527.6532928681</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_14">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.817109989697,21.2153935002431,-11.5527727034352</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_15">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.817821752222,21.2159476672541,-51527.6532928681</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_16">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.811116679537,21.2171252073354,-11.5527727034352</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_17">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.811828429152,21.217679399956,-51527.6532928681</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_18">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.802889238541,21.2194980807657,-11.5527727034352</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_19">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.803600970393,21.2200523085398,-51527.6532928681</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_20">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.794164365447,21.2220238151036,-11.5527727034352</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_21">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.794876078485,21.2225780801501,-51527.6532928681</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_22">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.789029900487,21.2235085893015,-11.5527727034352</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_23">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.788220744554,21.2245037216815,-51527.6532928681</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_24">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.805798455808,21.2147348152587,-11.5527729688018</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_25">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.80737190988,21.2144442854165,-11.5527729688018</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_26">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.806729402062,21.2136948392491,-11.552772146727</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_27">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.808002739554,21.2134479294447,-11.5527716143151</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_28">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.808489052799,21.2148208840677,-11.552772146727</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_29">
+<name>kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.820261508047,21.2138038619877,-11.552772146727</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_30">
+<name>kanivo k15</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.807925229018,21.2161050931339,-11.552772146727</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_31">
+<name>kanivo k16</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.807596898058,21.2164049837036,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_32">
+<name>kanivo k14</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.805993627563,21.2167280999177,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_33">
+<name>kanivo k13</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.804817508875,21.2170109680319,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_34">
+<name>kanivo k12</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.804030433368,21.2172658379712,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_35">
+<name>kanivo k11</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.802033044111,21.2178431478422,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_36">
+<name>kanivo k10</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.800877006972,21.2181786868897,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_37">
+<name>kanivo k1</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.798808360288,21.2187797368917,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_38">
+<name>kanivo k2</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.797748004316,21.2190471940173,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_39">
+<name>kanivo k3</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.796683355159,21.2193908739396,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_40">
+<name>kanivo k4</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.794539271133,21.2200326000131,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_41">
+<name>kanivo k5</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.79353703671,21.2202959423391,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_42">
+<name>kanivo k6</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.792654781405,21.2205797684413,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_43">
+<name>kanivo k7</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.790445693518,21.2212081198544,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_44">
+<name>kanivo K29 </name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.794703182974,21.2262190870475,-11.5527741009998</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_45">
+<name>L=726m</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.802422691786,21.2238352480637,-11.5527740540337</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_46">
+<name>kanivo K28 </name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.802095569362,21.2239251590233,-11.5527737134086</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_47">
+<name>L=660m</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.810236530434,21.2215961912185,-11.5527740540337</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_48">
+<name>kanivo K27 </name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.809883268207,21.221696676295,-11.5527737134086</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_49">
+<name>kanivo K26 </name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.815729723374,21.2200082471196,-11.5527737134086</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_50">
+<name>kanivo k9</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.788789780945,21.2216966659051,-11.5527711367536</coordinates>
+</Point>
+</Placemark>
+<Placemark id="kml_51">
+<name>Kanivo</name>
+<Style>
+<LineStyle>
+<color>ff0052a5</color>
+</LineStyle>
+</Style>
+<Point>
+<coordinates>105.814804002894,21.2139622043181,-11.552773356393</coordinates>
+</Point>
+</Placemark>
+</Folder>
+</Document></kml>

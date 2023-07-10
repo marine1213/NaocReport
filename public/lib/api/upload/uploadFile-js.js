@@ -215,3 +215,7 @@
 
   	// Credit to: https://stackoverflow.com/questions/21720390/how-to-change-name-of-file-in-javascript-from-input-file
   	renameFile=(file, newName)=>{var blob = file.slice(0, file.size, file.type); return new File([blob], newName, {type: file.type,lastModified: file.lastModified});}
+
+  	uploadFileToGoogleDrive=(file,fileName,callback)=>{
+  		postMultipart(file,localStorage.getItem("accessToken")).then(response=>{callback?callback(`${response.id}?${fileName}`):null;});
+  	}
